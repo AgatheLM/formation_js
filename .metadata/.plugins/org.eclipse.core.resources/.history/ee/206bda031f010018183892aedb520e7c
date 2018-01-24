@@ -37,7 +37,7 @@
 				<td><label id="erreur_cp" style="color:red"></label></td>
 			</tr>
 		</table>
-		<input type="submit" id="valider" value="Valider" disabled=''/>
+		<input type="submit" id="valider" value="Valider" />
 		<input type="reset" value="Réinitialiser"  onClick="reinit_form()"/><br>
 		
 		

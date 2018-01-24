@@ -65,17 +65,14 @@
 			
 	   }
 	 
-	 
-
-	 
 	 function isEmailValide(){
 		 var email = document.getElementById("email").value;
 		 if (!isEmail(email)){
 				erreur_email.innerHTML="Email invalide";
-				document.getElementById('valider').disabled='disabled'
+				document.getElementById("valider").disabled = "true";
 		}else{
 			erreur_email.innerHTML="";
-			document.getElementById('valider').disabled='';
+			document.getElementById("valider").disabled = none;
 		}
 	   }
 	 

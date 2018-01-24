@@ -10,7 +10,7 @@
 <body>
 	<h1>Exercice 4</h1>
 
-	<form name="formulaire" method="post" action="" onsubmit="return verifForm()">
+	<form method="post" action="" onsubmit="return verifForm()">
 		<table>
 			<tr>
 				<!-- Un champ « nom » : Ce champ doit être obligatoire -->
@@ -37,7 +37,7 @@
 				<td><label id="erreur_cp" style="color:red"></label></td>
 			</tr>
 		</table>
-		<input type="submit" id="valider" value="Valider" disabled=''/>
+		<input type="submit" value="Valider" />
 		<input type="reset" value="Réinitialiser"  onClick="reinit_form()"/><br>
 		
 		
