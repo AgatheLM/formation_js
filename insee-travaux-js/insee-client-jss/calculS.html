@@ -1,0 +1,67 @@
+    <!DOCTYPE html>
+    <html>
+      <head>
+        <title>Simulateur de salaire</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="scripts/utils.js" type="text/javascript"></script>
+        <script src="scripts/classe.js?4" type="text/javascript"></script>
+        <script src="scripts/calculMain.js" type="text/javascript"></script>
+      </head>
+      <body>
+        <h1>Calculateur de salaire</h1>
+        <form id="formSalaire" onsubmit="return false;">
+          <div>
+            <label for="Nom">Nom&nbsp;:</label>
+            <input id="Nom" type="text">$
+          </div>
+          <div>
+            <label for="anneeEmbauche">Annee Embauche&nbsp;:</label>
+            <input id="anneeEmbauche" type="number">
+          </div>
+          <div>
+            <label for="salaireM">Salaire Mensuel&nbsp;:</label>
+            <input id="salaireM" type="number">
+          </div>
+          <!-- Debut : Bloc qu'on n'affiche que pour les Developpeurs-->
+          <div id="nbAppDivId">
+            <label for="nbApp">Nombre d'Application&nbsp;:</label>
+            <input id="nbApp" type="number">
+          </div>
+          <div id="noteMoyDivId">
+            <label for="noteMoy">Note Moyenne&nbsp;:</label>
+            <input id="noteMoy" type="number">
+          </div>
+          <!-- Fin : Bloc -->
+          <!--Debut : Bloc qu'on n'affiche que pour les commerciaux -->
+          <div id="pourcentageDivId" style="display:none">
+            <label for="pourcent">Pourcentage &nbsp;:</label>
+            <input id="pourcent" type="number">
+          </div>
+          <div id="chiffreMoyDivId" style="display:none">
+            <label for="chiffMoy">Chiffre d'Affaire Moyen&nbsp;:</label>
+            <input id="chiffMoy" type="number">
+          </div>
+          <div id="nbClientDivId" style="display:none">
+            <label for="nbClient">Nombre de Clients&nbsp;:</label>
+            <input id="nbClient" type="number">
+          </div>
+          <!--Fin : bloc -->
+          <div>
+            <label for="typePersonne">Type Salarie&nbsp;:</label>
+            <select id="typePersonne" onclick="clicSelect()">
+              <option value="0" selected>Developpeur</option>
+              <option value="1">Commercial</option>
+            </select>
+          </div>
+          <div>
+            <input type="submit" value="Calculer" onclick="calculateSalary()">
+            <input type="reset" value="Effacer" onclick="resetAll()">
+          </div>
+        </form>
+        <hr>
+        <p>Salaire Annuel &nbsp;: <span id="salaireAnnuelResult"></span></p>
+        <p>Anciennete &nbsp;: <span id="ancienneteResult"></span></p>
+        <p>Personnel En String : <span id="toStringResult"></span></p>
+      </body>
+    </html>

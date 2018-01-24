@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Ma page avec bloc</title>
+	<link rel="stylesheet" href="css/styles.css" />
+	<script type="text/javascript" src="scripts/main.js"></script>
+</head>
+<body>
+	<section class="wrapper">
+		<header class="entete">
+			Entete
+		</header>
+		<nav class="navigation">
+			<ul>
+			 <li>Cliquer <a href="nav-inscription.html">ici</a> pour vous inscrire : </li>
+			 <li>Cliquer <a href="nav-liste.html">ici</a> pour voir les utilisateurs : </li>
+			 <li>Cliquer <a href="nav-connexion.html">ici</a> pour vous connecter : </li>
+			 <li>Cliquer <a href="nav-index.html">ici</a> pour revenir a laccueil : </li>
+			</ul>
+		</nav>
+		<section class="body">
+			<section class="contenu">
+				<h1>Articles</h1>
+				<article id="id_article1">
+					<h2>Identifiez vous : <br/></h2>
+					<form action="" method="post">
+						<table>
+							<tr>
+								<td><label for="login"><strong>Login : </strong></label></td>
+								<td><input type="text" name="login" id="login" /></td>
+							</tr>
+							<tr>
+								<td><label for="pass"><strong>Password : </strong></label></td>
+								<td><input type="password" name="pass" id="pass" /></td>
+							</tr>
+						</table>
+						<table>
+							<tr>
+								<input type="submit" name="connexion" value="Se connecter" onclick="displayForm()"/>
+								<input type="button" name="raz" value="Reinitialiser" onclick="reinitFormConnexion()"/>	
+							</tr>
+						</table>
+						
+					</form>
+				</article>
+			</section>
+		</section>
+		<footer class="pied-de-page">
+			pied de page
+		</footer>
+	</section>
+</body>
+</html>

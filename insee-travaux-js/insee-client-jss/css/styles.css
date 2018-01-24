@@ -1,0 +1,65 @@
+body{
+	padding: 0;
+	margin: 0;
+	background: #cccccc;
+}
+.wrapper{
+	width: 100%;
+}
+.wrapper .entete{
+	width: 100%;
+	text-align: center;
+	background: #0091FF;
+	color: #ffffff;
+}
+.wrapper .navigation{
+	width: 100%;
+	text-align: left;
+	background: #FFF000;
+}
+.wrapper .pied-de-page{
+	width: 100%;
+	text-align: center;
+	background: #0091FF;
+	color: #ffffff;
+}
+.wrapper .contenu {
+	border: 3px outset blue;
+	margin: 20px;
+}
+.wrapper .contenu article{
+	border: 1px solid red;
+	margin: 20px;
+}
+
+
+
+#baniere{
+height:100px;
+width:100%;
+}
+ 
+#baniere_gauche{
+width:50%;
+height:100%;
+float:left;
+}
+ 
+#baniere_droite{
+width:30%;
+height:100%;
+}
+
+.images .img{
+	padding: 0 20px;
+	overflow: hidden;
+}
+
+
+.tdPairClass{
+background: #CCC;
+}
+
+.tdImpairClass{
+background: #FFF;
+}

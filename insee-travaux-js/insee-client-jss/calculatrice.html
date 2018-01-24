@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>Ma calculatrice</title>
+<script type="text/javascript" src="scripts/main.js"></script>
+</head>
+<body>
+	<form action="">
+		<table>
+							<tr>
+								<td><label for="operande1"><strong>Operande 1 : </strong></label></td>
+								<td><input type="text" name="op1" id="op1" /></td>
+							</tr>
+							<tr>
+								<td><label for="operateur"><strong>Operateur : </strong></label></td>
+								<td>
+									<select name="operateur" id="operateur">
+							            <option value="none">Sélectionnez votre opérateur</option>
+							            <option value="+">+</option>
+							            <option value="-">-</option>
+							            <option value="*">*</option>
+							            <option value="/">/</option>
+							        </select>
+						       </td>
+							</tr>
+							<tr>
+								<td><label for="operande2"><strong>Operande 2 : </strong></label></td>
+								<td><input type="text" name="op2" id="op2" /></td>
+							</tr>
+							<tr>
+								<td><label for="resultat"><strong>Resultat : </strong></label></td>
+								<td><font color="red"><label for="labelResultat" id="labelResultat"> </label></font></td>
+							</tr>
+						</table>
+						<table>
+							<tr>
+								<input type="button" value="Calculer" onclick="effectueCalcul()"/>
+								<input type="reset" name="raz" value="Reinitialiser"/>	
+							</tr>
+						</table>
+	</form>
+</body>
+</html>

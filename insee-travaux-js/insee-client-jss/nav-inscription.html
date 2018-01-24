@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Ma page avec bloc</title>
+	<link rel="stylesheet" href="css/styles.css" />
+	<script type="text/javascript" src="scripts/main.js"></script>
+</head>
+<body>
+	<section class="wrapper">
+		<header class="entete"> Entete </header>
+		<nav class="navigation">
+			<ul>
+				<li>Cliquer <a href="nav-inscription.html">ici</a> pour vous
+					inscrire :
+				</li>
+				<li>Cliquer <a href="nav-liste.html">ici</a> pour voir les
+					utilisateurs :
+				</li>
+				<li>Cliquer <a href="nav-connexion.html">ici</a> pour vous
+					connecter :
+				</li>
+				<li>Cliquer <a href="nav-index.html">ici</a> pour revenir a
+					laccueil :
+				</li>
+			</ul>
+		</nav>
+		<section class="body">
+			<section class="contenu">
+				<h1>Articles</h1>
+				<article id="id_article1">
+					<h2>Utilisez le formulaire ci dessous pour vous inscrire.</h2>
+					<form action="" method="post" onsubmit="return verifFormGlobal()">
+						<table>
+							<tr>
+								<td><label for="nom"><strong>Nom : </strong></label></td>
+								<td><input type="text" name="nom" id="nom" /></td>
+							</tr>
+							<tr>
+								<td><label for="prenom"><strong>Prenom : </strong></label></td>
+								<td><input type="text" name="prenom" id="prenom" /></td>
+							</tr>
+							<tr>
+								<td><label for="email"><strong>Email : </strong></label></td>
+								<td><input type="text" name="email" id="email" onblur="valideEmailApresSortie(this.value)"/></td>
+							</tr>
+							<tr>
+								<td><label for="codeP"><strong>Code Postal : </strong></label></td>
+								<td><input type="text" name="codeP" id="codeP" onkeyup="interditSaisieNonEnter(this)"/></td>
+							</tr>
+							<tr>
+								<td><label for="annee_naissance"><strong>Naissance : </strong></label></td>
+								<td><input type="text" name="annee_naissance" id="annee_naissance" onkeyup="interditSaisieNonEnter(this)"/></td>
+							</tr>
+							<tr>
+								<td><label for="sexe"><strong>Sexe : </strong></label></td>
+								<td>
+									<input type="radio" name="sexe" value="0" checked="checked"> Homme </input>
+									<input type="radio" name="sexe" value="1"> Femme </input>
+								</td>
+							</tr>
+						</table>
+						<table>
+							<tr>
+								<input type="submit" name="soumettre" value="Creer cet utilisateur" />
+								<input type="button" name="raz" value="Reinitialiser" onclick="reinitFormConnexion()"/>	
+							</tr>
+						</table>
+						<label for="labelErreur" id="labelErreur"> </label>
+					</form>
+				</article>
+			</section>
+		</section>
+		<footer class="pied-de-page"> pied de page </footer>
+	</section>
+</body>
+</html>

@@ -1,0 +1,70 @@
+<!--
+	Rappel html
+	section
+	header
+	nav
+	footer
+	aside
+	article
+-->
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Ma page avec bloc</title>
+	<link rel="stylesheet" href="css/styles.css" />
+	<script type="text/javascript" src="scripts/main.js"></script>
+</head>
+<body>
+	<section class="wrapper">
+		<header class="entete">
+			Entete
+		</header>
+		<nav class="navigation">
+			<ul>
+			 <li>Cliquer <a href="nav-inscription.html">ici</a> pour vous inscrire : </li>
+			 <li>Cliquer <a href="nav-liste.html">ici</a> pour voir les utilisateurs : </li>
+			 <li>Cliquer <a href="nav-connexion.html">ici</a> pour vous connecter : </li>
+			 <li>Cliquer <a href="nav-index.html">ici</a> pour revenir a laccueil : </li>
+			</ul>
+		</nav>
+		<section class="body">
+			<section class="contenu">
+				<h1>Articles</h1>
+				<article id="id_article1">
+					<h2>Bienvenue à l'accueil.</h2><br>
+					 <div class="container">   
+					    <div class="row images">
+							<div class="col-sm-4 img">
+							 	<img src="img/img1.jpg" alt="" onmouseover="gestionOnmouseOverImages(this)" onmouseout="gestionOnmouseOutImages()"/>
+							</div>
+							<div class="col-sm-4 img">
+							 	<img src="img/img2.jpg" alt="" onmouseover="gestionOnmouseOverImages(this)" onmouseout="gestionOnmouseOutImages()"/>
+							</div>
+							<div class="col-sm-4 img">
+							 	<img src="img/img3.jpg" alt="" onmouseover="gestionOnmouseOverImages(this)" onmouseout="gestionOnmouseOutImages()"/>
+							</div>
+						</div>
+						<p></p>
+						<div class="row">
+							<div class="col-xs-12 text-center">
+							 	<img src="img/img4.jpg" alt="" />
+							</div>
+						</div>
+					</div>
+				</article>
+				<article id="id_article2">
+					
+				</article>
+			</section>
+		</section>
+		<footer class="pied-de-page">
+			pied de page <br>
+			<article id="id_article_footer">
+					
+				</article>
+		</footer>
+	</section>
+</body>
+</html>
