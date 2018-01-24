@@ -1,0 +1,227 @@
+
+/*************************
+* Exercice 1             *
+*************************/
+
+function main(){
+	
+	// Exercice 1
+	try{
+		// 1 - Demande à l'utilisateur
+		var largeur = prompt ('Renseigner la largeur?','');
+		var longueur = prompt ('Renseigner la longueur?','');
+		//2. Appel aux fonctions utilitaires
+		var surface=calculSurface(longueur, largeur);
+		var perimetre=calculPerimetre(longueur, largeur);
+		//3. Affichage du résultat
+		alert ("La surface est de " + surface);
+		alert ("Le périmètre est de " + perimetre);
+	} catch(e) {
+		console.log(e);
+	}
+	
+	
+}
+
+
+	function calculSurface (longueur, largeur)  {
+		try {
+			surface=longueur*largeur;
+			return surface;
+		} catch(e){
+			console.log(e);
+		}
+		
+	}
+	
+	function calculPerimetre (longueur, largeur){
+		try {
+			perimetre=2*longueur+2*largeur;
+			return perimetre;
+		}catch(e){
+			console.log(e);
+		}
+
+	}
+
+	
+
+/*************************
+* Exercice 2             *
+*************************/
+	
+	function main_exo2(){
+		
+		/*Exercice 2 : Manipulation des tableaux
+		Nous souhaitons afficher les éléments d’un tableau selon l’indice fourni par un utilisateur. 
+		Cette action sera répétée autant de fois jusqu’à ce que l’utilisateur saisisse le nombre « -1 » pour sortir. 
+		Travail à faire :
+		- Coder une fonction qui initialisera le tableau ci dessous :
+		var tab = new Array("Hollande","ZOME","Sarkozy","LE PEN","LE MAIRE","VALLS"
+		- Faire pointer l’action du bouton sur cette nouvelle fonction. 
+		*/
+			
+		try{
+			var tab = initTableau();
+			var max=tab.length;
+			var i = 0;
+			while (i!=-1 ){
+				i = parseInt(prompt ('Quel élément voulez vous?'));
+				if ( i<max){
+					alert(afficheElement(tab,i));
+					//i = prompt ('Quel élément voulez vous?');	
+				} else  {
+					alert ("Indice incorrect, il n'y a que " + max + " élements");
+					//i = prompt ('Quel élément voulez vous?');				
+				}
+			}	
+			
+		} catch(e) {
+			console.log(e);
+		}
+		
+		
+	}
+
+	function initTableau(){
+		return new Array("Hollande","ZOME","Sarkozy","LE PEN","LE MAIRE","VALLS");
+	}
+	
+	
+	function afficheElement(tab, i){
+		return tab[i];
+	}
+
+
+	/*************************
+	* Exercice 3             *
+	*************************/	
+	
+	function main_exo3(){		
+		/*Exercice 3 : Faire une calculette*/
+			
+		try{
+			var resul;
+			var v1 = parseFloat(document.getElementById("val1").value);
+			var v2 = parseFloat(document.getElementById("val2").value);
+			var op = document.getElementById("operateur").value;
+			resul=calcul(v1,v2,op);
+			result.innerHTML=resul;
+			
+		} catch(e) {
+			console.log(e);
+		}
+				
+	}
+
+
+	
+	function main_exo3_reinit(){		
+		/*Exercice 3 : Faire une calculette*/
+			
+		try{
+			//document.getElementById("val1").value="";
+			//document.getElementById("val2").value="";
+			//document.getElementById("operateur").value="none";
+			result.innerHTML="";
+			
+		} catch(e) {
+			console.log(e);
+		}
+				
+	}
+	
+	function calcul (v1,v2,op){
+		try{
+			var resul;
+			switch(op){
+			case "+" :
+				resul = v1 + v2
+				break;
+			case "-" :
+				resul = v1-v2
+				break;
+			case "*" :
+				resul = v1*v2
+				break;
+			case "/" :
+				if(v2!=0){
+					resul = v1/v2
+				}else{
+					resul=0;
+					alert("On ne peut pas diviser par 0");
+					main_exo3_reinit();
+				}
+				break;
+			}
+			return resul;
+		}catch(e){
+			console.log(e);
+		}
+
+	}
+	
+/*************************
+* Exercice 4             *
+*************************/
+	
+	function main_exo4(){
+		try{
+			var nom = document.getElementById("nom");
+			var an = document.getElementById("an");
+			var email = document.getElementById("email");
+			var cp = document.getElementById("cp");
+			var erreur;
+			//Un champ « nom » : Ce champ doit être obligatoire
+			if (nom==''){
+				alert("nom vide");
+				erreur_nom.innerHTM='Le nom doit être renseigné'
+			}
+						//Un champ « annee_naissance » : Ce champ s’il est renseigné ne doit accepter que des nombres numériques
+			if (an==NaN){
+				erreur_an.innerHTM="Année de naissance non valide";
+			}
+			
+			//Un champ email : Si ce champ est renseigné l’email doit être valide avant de perdre le focus
+			if (email==NaN){
+				erreur_email.innerHTM="Eamail invalide";
+			}
+			//Un champ code postal : le code Postal doit être un nombre à 5 chiffres s’il est renseigné.
+			if (length(cp)!=5){
+				erreur_cp.innerHTM='CP non valideS';
+			}
+			
+		}catch(e){
+			console.log(e);
+		}
+	}
+	
+	function isRempli(champ){
+		try{
+			
+		}catch(e){
+			console.log(e)
+		}
+	}
+	
+	function isRempli(champ){
+		try{
+			
+		}catch(e){
+			console.log(e)
+		}
+	}
+	function isRempli(champ){
+		try{
+			
+		}catch(e){
+			console.log(e)
+		}
+	}
+	function isRempli(champ){
+		try{
+			
+		}catch(e){
+			console.log(e)
+		}
+	}

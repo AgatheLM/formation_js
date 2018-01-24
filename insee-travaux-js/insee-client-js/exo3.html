@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>Exercice 3</title>
+<script type="text/javascript" src="scripts/exo3.js"></script>
+</head>
+<body>
+
+	<h1>Exercice 3</h1>
+	<form action="">
+		<table>
+			<tr>
+				<td><label for="val1"> Valeur 1 </label></td>
+				<td><input type="text" name="val1" id="val1" /></td>
+			</tr>
+			<tr>
+				<td><label for="operateur"> Opérateur </label></td>
+				<td><select name="operateur" id="operateur">
+						<option value="none">selectionner l'opérateur</option>
+						<option value="+">+</option>
+						<option value="-">-</option>
+						<option value="*">*</option>
+						<option value="/">/</option>
+				</select></td>
+			</tr>
+			<tr>
+				<td><label for="val2"> Valeur 2 </label></td>
+				<td><input type="text" name="val2" id="val2" /></td>
+			</tr>
+			<tr>
+				<td><label for="resultat"> Resultat</label></td>
+				<td><label id="result"> Resultat </label></td>
+			</tr>
+		</table>
+		<input type="button" value="Calculer" onclick="main_exo3()" /> 
+		<input type="reset" value="Reinit" onclick="main_exo3_reinit()" />
+	</form>
+
+
+
+</body>
+</html>

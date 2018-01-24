@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>Ma page de calcul</title>
+<script type="text/javascript" src="scripts/main.js?1"></script>
+</head>
+
+<body>
+	<h1>Exercice 4</h1>
+
+	<form method="post" action="" onsubmit="return verifForm()">
+		<table>
+			<tr>
+				<!-- Un champ « nom » : Ce champ doit être obligatoire -->
+				<td><label for="nom"> Nom </label></td>
+				<td><input type="text" name="nom" id="nom" /></td>
+				<td><label id="erreur_nom"></label></td>	
+			</tr>
+			<tr>
+				<!-- Un champ « annee_naissance » : Ce champ s’il est renseigné ne doit accepter que des nombres numériques -->
+				<td><label for="an"> Année de naissance </label></td>
+				<td><input type="text" name="an" id="an" /></td>
+				<td><label id="erreur_an"></label></td>
+			</tr>
+			<tr>
+				<!-- Un champ email : Si ce champ est renseigné l’email doit être valide avant de perdre le focus -->
+				<td><label for="email"> Email </label></td>
+				<td><input type="texte" name="email" id="email" onblur="isEmailValide()" /></td>
+				<td><label id="erreur_email"></label></td>
+			</tr>
+			<tr>
+				<!-- Un champ code postal : le code Postal doit être un nombre à 5 chiffres s’il est renseigné. -->
+				<td><label for="cp"> Code postal </label></td>
+				<td><input type="text" name="cp" id="cp" onKeyPress="isNumber" /></td>
+				<td><label id="erreur_cp"></label></td>
+			</tr>
+		</table>
+		<input type="submit" value="Valider" /><br>
+		
+		
+		
+	</form>
+</body>
+</html>
