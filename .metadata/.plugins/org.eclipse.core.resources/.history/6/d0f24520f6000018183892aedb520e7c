@@ -1,0 +1,78 @@
+function main(){
+	
+	// Exercice 1
+	try{
+		// 1 - Demande à l'utilisateur
+		var largeur = prompt ('Renseigner la largeur?','');
+		var longueur = prompt ('Renseigner la longueur?','');
+		//2. Appel aux fonctions utilitaires
+		var surface=calculSurface(longueur, largeur);
+		var perimetre=calculPerimetre(longueur, largeur);
+		//3. Affichage du résultat
+		alert ("La surface est de " + surface);
+		alert ("Le périmètre est de " + perimetre);
+	} catch(e) {
+		console.log(e);
+	}
+	
+	
+}
+
+function main_exo2(){
+	
+	/*Exercice 2 : Manipulation des tableaux
+	Nous souhaitons afficher les éléments d’un tableau selon l’indice fourni par un utilisateur. 
+	Cette action sera répétée autant de fois jusqu’à ce que l’utilisateur saisisse le nombre « -1 » pour sortir. 
+	Travail à faire :
+	- Coder une fonction qui initialisera le tableau ci dessous :
+	var tab = new Array("Hollande","ZOME","Sarkozy","LE PEN","LE MAIRE","VALLS"
+	- Faire pointer l’action du bouton sur cette nouvelle fonction. 
+	*/
+	
+	
+	try{
+		var tab = initTableau();
+		var i = parseInt(prompt ('Quel élément voulez vous?',''));
+		if (i<>-1){
+			alert(afficheElement(tab,i));
+		} else {
+			alert ("Indice incorrect");
+		}
+		
+	} catch(e) {
+		console.log(e);
+	}
+	
+	
+}
+
+
+	function calculSurface (longueur, largeur)  {
+		try {
+			surface=longueur*largeur;
+			return surface;
+		} catch(e){
+			console.log(e);
+		}
+		
+	}
+	
+	function calculPerimetre (longueur, largeur){
+		try {
+			perimetre=2*longueur+2*largeur;
+			return perimetre;
+		}catch(e){
+			console.log(e);
+		}
+
+	}
+
+
+	
+	function initTableau(){
+		var tab = new Array("Hollande","ZOME","Sarkozy","LE PEN","LE MAIRE","VALLS");
+		return tab;
+	}
+	function afficheElement(i, tab){
+		return tab[i];
+	}

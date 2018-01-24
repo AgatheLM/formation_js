@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>Ma page de calcul</title>
+<script type="text/javascript" src="scripts/main.js"></script>
+</head>
+<body>
+
+	<h1> Exercice 1 </h1>
+	<form action="">
+		Cliquer sur le bouton pour executer l'exo 1 : <input type="button"
+			value="Action" onclick="main()" />
+	</form>
+	
+	<h1> Exercice 2 </h1>
+	<form action="">
+		Cliquer sur le bouton pour executer l'exo 2 : <input type="button"
+			value="Action" onclick="main_exo2()" />
+	</form>
+	
+	<h1> Exercice 3 </h1>
+	<form action="">
+		<tr>
+			<td><input type="test" name="op1" id="op1" value="Operateur 1" /> </td>
+			<td><input type="test" name="op2" id="op2" value="Operateur 2" /> </td>
+		</tr>
+	
+	</form>
+	
+	
+</body>
+</html>

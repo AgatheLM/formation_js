@@ -1,0 +1,32 @@
+function main(){
+	
+	/*Exercice 1 : Calculs de grandeurs de figures
+	Nous souhaitons calculer le périmètre et la surface d’un rectangle dont les dimensions seront fournies par l’utilisateur. 
+	Les fonctions JS à utiliser seront :
+	- Alert
+	- Prompt
+	- Récupérer et importez le projet « insee-client-js » dans Eclipse
+	- Coder une fonction qui prend 2 paramètres et retourne la surface
+	- Code une fonction qui prend 2 paramètres et retourne le périmètre
+	- Modifier la fonction « main () » afin qu’elle puisse demander à l’utilisateur de rentrer la longueur et la largeur et 
+	qu’elle puisse successivement afficher la surface et le périmètre. Une démo des affichages attendus sera fournie en TP*/
+	
+	var longueur;
+	var largeur;
+	
+	function surface (longuer, largeur){
+		surface=longueur*largeur;
+		return surface;
+	}
+	
+	function surface (longueur, largeur){
+		surface=longueur*largeur;
+		return surface;
+	}
+	
+	alert("test");
+	largeur = prompt ('Renseigner la largeur?','');
+	longueur = prompt ('Renseigner la longueur?','');
+	
+	alert (surface(longueur, largeur));
+}
