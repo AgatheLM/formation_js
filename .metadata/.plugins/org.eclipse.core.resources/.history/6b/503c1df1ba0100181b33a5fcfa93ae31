@@ -1,0 +1,19 @@
+// Cacher - afficher les div en fonction du select
+ function methodeAfficheDiv(){
+	 try{
+		 var div = document.getElementById("typeSalarie").value;
+		 if (div=="dev"){
+			 document.getElementById("divDev").style.display="";
+			 document.getElementById("divCom").style.display="none";
+		 }else if (div=="com"){
+			 document.getElementById("divDev").style.display="none";
+			 document.getElementById("divCom").style.display="";
+		 }else{
+			 document.getElementById("divDev").style.display="none";
+			 document.getElementById("divCom").style.display="none";
+		 }
+		 
+	 }catch(e){
+		 console.log(e);
+	 }
+ }

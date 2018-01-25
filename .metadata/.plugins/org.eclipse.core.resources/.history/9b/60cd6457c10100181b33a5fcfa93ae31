@@ -1,0 +1,70 @@
+
+
+
+
+
+
+
+// Cacher - afficher les div en fonction du select
+ function methodeAfficheDiv(){
+	 try{
+		// Pour rempalcer le document.getElementById et rester en objet
+		 var reader = new ElementReader();
+		 //var div = document.getElementById("typeSalarie").value;
+		 var div = reader.Select('typeSalarie');
+		 if (div=="dev"){
+			 document.getElementById("divDev").style.display="";
+			 document.getElementById("divCom").style.display="none";
+		 }else if (div=="com"){
+			 document.getElementById("divDev").style.display="none";
+			 document.getElementById("divCom").style.display="";
+		 }else{
+			 document.getElementById("divDev").style.display="none";
+			 document.getElementById("divCom").style.display="none";
+		 }
+		 
+	 }catch(e){
+		 console.log(e);
+	 }
+ }
+ 
+ 
+ // Méthode de calcul
+ function calculer(){
+	 try{
+		 var reader = new ElementReader();
+		 var writer = new ElementWriter();
+		 
+		 var type = reader.InputText("typeSalarie");
+		 var nom = reader.InputText("nom");
+		 var anEmb = reader.InputText("anEmbauche");
+		 var salM = reader.InputText("salaireM");
+		 //Dev
+		 var nbAppli = reader.InputText("nbAppli");
+		 var note = reader.InputText("note");
+		 //Com
+		 var nbClient = reader.InputText("nbClient");
+		 var pourcent = reader.InputText("pourcent");
+		 var caMoy = reader.InputText("caMoy");
+		 
+		 if (type=="dev"){
+			 var p = new Developpeur(nom, anEmb, salM, nbAppli, note);
+			 var salaireA = p.getSalaireA();
+			 writer.Tag("salAn", "Developpeur : " + salaireA);
+			 var anciennete = p.getAnciennete();
+			 writer.Tag("anciennete", "Developpeur : " + anciennete);
+			 
+		 }else{
+			 var p = new Commercial(nom, anEmb, salM, nbClient, pourcent, caMoy);
+			 var salaireA =  p.getSalaireA();
+			 writer.Tag("salAn", "Commercial : " + salaireA);
+			 var anciennete = p.getAnciennete();
+			 writer.Tag("anciennete", "Commercial : " + anciennete);
+			 
+		 }
+	 }catch(e){
+		 console.log(e);
+	 }
+
+	 
+ }

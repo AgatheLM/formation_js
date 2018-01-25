@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>TP 2</title>
+	<script type="text/javascript" src="scripts/TP2/classe.js"></script>
+	<script type="text/javascript" src="scripts/TP2/main.js"></script>
+	<script type="text/javascript" src="scripts/TP2/utils.js"></script>
+</head>
+
+<body>
+<h1> Calculateur de salaire</h1>
+<form>
+	<table>
+		<tbody>
+			<tr>
+				<td> <label for="nom"> <strong> Nom </strong> </label></td>
+				<td> <input type="text" id="nom" name="nom" value=""> </td>
+			</tr>
+			<tr>
+				<td> <label for="anEmbauche"> <strong> Année d'embauche </strong> </label></td>
+				<td> <input type="number" id="anEmbauche" name="anEmbauche" value=""> </td>
+			</tr>
+			<tr>
+				<td> <label for="salaireM"> <strong> Salaire mensuel </strong> </label></td>
+				<td> <input type="number" id="salaireM" name="salaireM" value=""> </td>
+			</tr>
+		</tbody>
+	</table>
+	<div id="divDev" style="display:none">
+		<table>
+			<tbody>
+					<tr>
+						<td> <label for="nbAppli"> <strong> Nombre d'applications </strong> </label></td>
+						<td> <input type="number" id="nbAppli" name="nbAppli" value=""> </td>
+					</tr>
+					<tr>
+						<td> <label for="note"> <strong> Note moyenne </strong> </label></td>
+						<td> <input type="number" id="note" name="note" value=""> </td>
+					</tr>
+			</tbody>
+		</table>
+	</div>
+	<div id="divCom" style="display:none">
+		<table>
+			<tbody>
+					<tr>
+						<td> <label for="pourcent"> <strong> Pourcentage (en %) </strong> </label></td>
+						<td> <input type="number" id="pourcent" name="pourcent" value=""> </td>
+					</tr>
+					<tr>
+						<td> <label for="caMoy"> <strong> Chiffre d'affaire moyen </strong> </label></td>
+						<td> <input type="number" id="caMoy" name="caMoy" value=""> </td>
+					</tr>
+					<tr>
+						<td> <label for="nbClient"> <strong> Nombre de clients </strong> </label></td>
+						<td> <input type="number" id="nbClient" name="nbClient" value=""> </td>
+					</tr>
+				</tbody>
+			</table>
+	</div >
+	<table>
+		<tbody>
+			<tr>
+				<td> <label for="typeSalarie"> <strong>Type de salarié </strong> </label></td>
+				<td><select name="typeSalarie" id="typeSalarie" onchange="methodeAfficheDiv()">
+							<option value="none" selected="selected">selectionner le type </option>
+							<option value="dev">Developpeur</option>
+							<option value="com">Commercial</option>
+					</select></td>
+			</tr>
+		</tbody>
+	</table>
+	
+	<input type="button" value="Calculer" onClick="calculer()">
+	<input type="reset" value="Effacer" onClick="effacer()"><br>
+	
+	<label for="salAn"> <strong> Salaire annuel : </strong> </label>
+	<label id="salAn" name="salAn">  </label><br>
+	<label for="anciennete"> <strong> Ancienneté :</strong> </label>
+	<label id="anciennete" name="anciennete"> </label><br>
+	<label for="persoString"> <strong> Personnel : </strong> </label>
+	<label id="persoString" name="persoString"> </label><br>
+
+</form>
+</body>

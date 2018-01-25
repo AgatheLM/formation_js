@@ -1,0 +1,56 @@
+/*******************************************************************************
+ * Personnel *
+ ******************************************************************************/
+
+function Personnel(nom, anEmbauche, salaireM) {
+	// Attributs
+	this.nom = nom;
+	this.anEmbauche = anEmbauche;
+	this.salaireM = salaireM;
+}
+
+//Méthodes
+Personnel.prototype.getSalaireA = function() {
+	return 12 * this.salaireM;
+}
+Personnel.prototype.getAnciennete = function() {
+	var today=new Date();
+	var anneeEnCours = today.getFullYear();
+	return anneeEnCours-anAmbauche;
+}
+
+/*******************************************************************************
+ * Developpeur *
+ ******************************************************************************/
+
+function Developpeur(nom, anEmbauche, salaireM, nbApp, note) {
+	// Attributs parents
+	Personnel.call(this, nom, anEmbauche, salaireM);
+	// Attributs propres
+	this.nbApp = nbApp;
+	this.note = note;
+}
+
+/*******************************************************************************
+ * Commercial *
+ ******************************************************************************/
+
+function Commercial(nom, anEmbauche, salaireM, nbClient, caMoy) {
+	// Attributs parents
+	Personnel.call(this, nom, anEmbauche, salaireM);
+	// Attributs propres
+	this.nbClient = nbClient;
+	this.caMoy = caMoy;
+
+
+
+}
+
+//Méthodes
+/**On instancie le fait que commercial est une instance de personnel pour pouvoire hériter des méthodes*/
+Commercial.prototype= new Personnel();
+Commercial.prototype.getSalaireA = function(pourcentage){
+	var salaireA = this.constructor.prototype.getSalaireA.call(this);
+	return salaireA + (this.caMoy*pourcentage/100);
+}
+

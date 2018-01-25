@@ -1,0 +1,47 @@
+/*******************************************************************************
+ * Personnel *
+ ******************************************************************************/
+
+function Personnel(nom, anEmbauche, salaireM) {
+	// Attributs
+	this.nom = nom;
+	this.anEmbauche = anEmbauche;
+	this.salaireM = salaireM;
+	// Méthodes
+	Personnel.getSalaireA = function() {
+		return 12 * salaireM;
+	}
+}
+
+
+
+/*******************************************************************************
+ * Developpeur *
+ ******************************************************************************/
+
+function Developpeur(nom, anEmbauche, salaireM, nbApp, note) {
+	// Attributs parents
+	Personnel.call(this, nom, anEmbauche, salaireM);
+	// Attributs propres
+	this.nbApp = nbApp;
+	this.note = note;
+}
+
+/*******************************************************************************
+ * Commercial *
+ ******************************************************************************/
+
+function Commercial(nom, anEmbauche, salaireM, nbClient, caMoy) {
+	// Attributs parents
+	Personnel.call(this, nom, anEmbauche, salaireM);
+	// Attributs propres
+	this.nbClient = nbClient;
+	this.caMoy = caMoy;
+	// Méthodes
+	Commercial.prototype.getSalaireA = function(pourcentage){
+		var salaireA = this.constructor.prototype.getSalaireA.call(this);
+		return salaireA + (caMoy*pourcentage);
+	}
+
+}
+

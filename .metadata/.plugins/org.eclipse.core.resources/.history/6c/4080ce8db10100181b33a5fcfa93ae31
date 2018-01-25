@@ -1,0 +1,17 @@
+
+
+/************************************
+*          Personnel               *
+*************************************/
+
+function Personnel(nom, anEmbauche, salaireM){
+	// Attributs
+	this.nom=nom;
+	this.anEmbauche=anEmbauche;
+	this.salaireM=salaireM;
+	// Méthodes
+	Personnel.getSalaireA = function(){
+		return 12 * salaireM;
+	}
+	
+	}
