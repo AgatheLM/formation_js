@@ -1,0 +1,7 @@
+.saisie{
+	color: "red";
+	border: 2px;
+	background-color: "pink";
+	
+	
+}

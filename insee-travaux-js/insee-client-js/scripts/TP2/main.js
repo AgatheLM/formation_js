@@ -37,7 +37,8 @@
   */
  function calculer(){
 	 try{
-	
+		 console.log(navigator.appName);
+		 console.log(navigator.appVersion);
 		 var type = reader.InputText("typeSalarie");
 		 var typeSelect=document.getElementById("typeSalarie");
 		 var labelType=typeSelect.options[typeSelect.selectedIndex].text;
@@ -74,10 +75,10 @@
 		 try{
 			 var writer = new ElementWriter();
 			 document.getElementById("typeSalarie").value="none";
-			 writer.Tag("salAn", "");
-			 writer.Tag("anciennete", "");
-			 writer.Tag("persoString", "");
-			 
+			 vinput = document.getElementsByClassName("saisie");
+			 for (var v = 0; v < vinput.length; v++) {
+				 vinput[v].value="";				
+			}
 		 }catch(e){
 			 console.log(e);
 		 }

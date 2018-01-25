@@ -1,0 +1,85 @@
+
+
+
+	var reader = new ElementReader();
+	var writer = new ElementWriter();
+
+
+
+// Cacher - afficher les div en fonction du select
+ function methodeAfficheDiv(){
+	 try{
+		// Pour rempalcer le document.getElementById et rester en objet
+		 var reader = new ElementReader();
+		 //var div = document.getElementById("typeSalarie").value;
+		 var div = reader.Select('typeSalarie');
+		 if (div=="dev"){
+			 document.getElementById("divDev").style.display="";
+			 document.getElementById("divCom").style.display="none";
+		 }else if (div=="com"){
+			 document.getElementById("divDev").style.display="none";
+			 document.getElementById("divCom").style.display="";
+		 }else{
+			 document.getElementById("divDev").style.display="none";
+			 document.getElementById("divCom").style.display="none";
+		 }
+		 
+	 }catch(e){
+		 console.log(e);
+	 }
+ }
+ 
+ 
+ // Méthode de calcul
+ /**
+  * 
+  * @returns
+  */
+ function calculer(){
+	 try{
+	
+		 var type = reader.InputText("typeSalarie");
+		 var typeSelect=document.getElementById("typeSalarie");
+		 var labelType=typeSelect.options[typeSelect.selectedIndex].text;
+		 var nom = reader.InputText("nom");
+		 var anEmb = reader.InputText("anEmbauche");
+		 var salM = reader.InputText("salaireM");
+		 //Dev
+		 var nbAppli = reader.InputText("nbAppli");
+		 var note = reader.InputText("note");
+		 //Com
+		 var nbClient = reader.InputText("nbClient");
+		 var pourcent = reader.InputText("pourcent");
+		 var caMoy = reader.InputText("caMoy");
+		 // Création de la personne selon le type
+		 if (type=="dev"){
+			 var p = new Developpeur(nom, anEmb, salM, nbAppli, note);			 
+		 }else{
+			 var p = new Commercial(nom, anEmb, salM, nbClient, pourcent, caMoy);			 
+		 }
+		 // Calculs
+		 var salaireA = p.getSalaireA();
+		 var anciennete = p.getAnciennete();
+		 var persoString = p.personnelToString();
+		 writer.Tag("salAn", labelType+ " : " + salaireA);
+		 writer.Tag("anciennete", labelType+ " : " + anciennete);
+		 writer.Tag("persoString", persoString);
+		
+	 }catch(e){
+		 console.log(e);
+	 }
+ }
+
+	 function effacer(){
+		 try{
+			 var writer = new ElementWriter();
+			 document.getElementById("typeSalarie").value="none";
+			 vinput = document.getElementsByClassName("saisie");
+			 for (var v = 0; v < vinput.length; v++) {
+				 vinput[v].value="";				
+			}
+		 }catch(e){
+			 console.log(e);
+		 }
+	 
+ }
