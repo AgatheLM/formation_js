@@ -135,7 +135,7 @@ function updateCustomer() {
 	$.ajax({
 		type: 'PUT',
 		contentType:'application/json',
-		url: URL_ROOT,
+		url: URL_ROOT+"2",
 		dataType: 'json',
 		data : test, 
 		success: function(){
