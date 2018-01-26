@@ -40,6 +40,8 @@ $('#customerTableDivId table tr').live('dblclick', function() {
 	console.log('Entree dans double clic pour suppresion');
 	var customerId = $(this).data('identity');
 	deleteByIdAndRefresh(customerId);
+	
+	
 });
 
 /**
@@ -50,7 +52,26 @@ $('#customerTableDivId table tr').live('dblclick', function() {
 function deleteByIdAndRefresh(customerId){
 	try {
 		console.log('deleteByIdAndRefresh');
-		//TODO 3 : Codez ici les instructions pour la suppression
+		$.ajax({
+			type: 'DELETE',
+			contentType:'application/json',
+			url: URL_ROOT+customerId,
+			dataType: 'json',
+			//data : customerId, 
+			success: function(data){
+				console.log('deleteByIdAndRefresh success: ' + data.idClient);
+				alert("Client supprimé avec succès.");
+				resetForm();
+			},
+			 error: function(jqXHR, textStatus, errorThrouwn){ //jqXHR est un objet qui contient un peu tout, géré par l'API
+				   alert('deleteByIdAndRefresh error: '+textStatus);
+				   }
+		});
+		//resetForm();
+		findAllOnServer() ;
+		
+
+
 	} catch (e) {
 		console.log(e);
 	}
@@ -89,13 +110,44 @@ function findByIdAndLoadForm(customerId) {
 
 function addCustomer() {
 	console.log('addCustomer');
-	//TODO 1 : Codez les instructions pour l'ajout d'un client
-	//En retour il faut rafraichir le tableau
+	var test=formToJSON();
+	$.ajax({
+		type: 'POST',
+		contentType:'application/json',
+		url: URL_ROOT,
+		dataType: 'json',
+		data : test, 
+		success: function(data){
+			console.log('addCustomer success: ' + data.idClient);
+			alert("Client crée avec succès.");
+			findAllOnServer() ;
+		},
+		 error: function(jqXHR, textStatus, errorThrouwn){ //jqXHR est un objet qui contient un peu tout, géré par l'API
+			   alert('addCustomer error: '+textStatus);
+			   }
+	});
+	
 }
 
 function updateCustomer() {
 	console.log('updateCustomer');
-	//TODO 2 : Codez les instructions pour la mise à jour d'un client
+	var test=formToJSON();
+	$.ajax({
+		type: 'PUT',
+		contentType:'application/json',
+		url: URL_ROOT,
+		dataType: 'json',
+		data : test, 
+		success: function(){
+			console.log('updateCustomer success');
+			alert("Client modifié avec succès.");
+			findAllOnServer() ;
+		},
+		 error: function(jqXHR, textStatus, errorThrouwn){ //jqXHR est un objet qui contient un peu tout, géré par l'API
+			   alert('updateCustomer error: '+textStatus);
+			   }
+	});
+	//findAllOnServer() ;
 	//En retour il faut rafraichir le tableau
 }
 
@@ -198,6 +250,7 @@ function renderDetails(entity) {
  */
 function formToJSON() {
 	var idClient = $('#idClient').val();
+	console.log(idClient);
 	return JSON.stringify({
 		"idClient": idClient == "" ? null : idClient, 
 				"nom": $('#nom').val(), 

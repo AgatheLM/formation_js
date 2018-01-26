@@ -92,6 +92,25 @@ public class ClientRestResource {
 			}
 		}	
 		
+		@GET
+		@Path("search/{searchKey}")
+		@Produces(MediaType.APPLICATION_JSON)
+		public List<Client> getAllClientByName(@PathParam("searchKey") String searchName) {
+			try {
+				List<Client> results = userService.recupereParNom(searchName);
+				//On ne remonte pas les commandes liées à un Client pour eviter l'erreur "Infinite Loop"
+				for (Client client : results) {
+					client.setCommandes(null);
+				}
+				return results;
+			} catch (BusinessException e) {
+				log.error(e.getMessage());
+			}
+			return null;
+		}
+
+		
+		
 		@DELETE
 		@Path("{id}")
 		@Consumes( MediaType.APPLICATION_JSON)

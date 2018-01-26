@@ -1,0 +1,11 @@
+Manifest-Version: 1.0
+Implementation-Title: produit-jersey-webs
+Implementation-Version: 1.0.1-SNAPSHOT
+Built-By: CHZOME
+Implementation-Vendor-Id: eu.fr.esic.formation.trans.jersey.produit
+Build-Jdk: 1.8.0_05
+Implementation-URL: http://projects.spring.io/spring-boot/produit-jers
+ ey-webs/
+Created-By: Maven Integration for Eclipse
+Implementation-Vendor: Pivotal Software, Inc.
+

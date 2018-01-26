@@ -1,0 +1,51 @@
+<html>
+
+<body style="margin: 35px">
+	<form>
+		<a href="#" id="taille-12">12</a>
+		<a href="#" id="taille-14">14</a>
+		<a href="#" id="taille-16">16</a>
+	</form>
+	<script type="text/javascript">
+		function fabriqueRedimensionneur(taille) {
+		  return function() {
+		    document.body.style.fontSize = taille + 'px';
+		  };
+		};
+
+		var taille12 = fabriqueRedimensionneur(12);
+		var taille14 = fabriqueRedimensionneur(14);
+		var taille16 = fabriqueRedimensionneur(16);
+		document.getElementById('taille-12').onclick = taille12;
+		document.getElementById('taille-14').onclick = taille14;
+		document.getElementById('taille-16').onclick = taille16;
+	
+	
+		function faireAddition(x) {
+			  return function(y) {
+			    return x + y;
+			  };
+			};
+	
+			var ajout5 = faireAddition(5);
+			var ajout10 = faireAddition(10);
+	
+			console.log(ajout5(2));  // 7
+			console.log(ajout10(2)); // 12
+		</script>
+		
+		<script type="text/javascript">
+		function faireAddition(x) {
+			  return function(y) {
+			    return x + y;
+			  };
+			};
+	
+			var ajout5 = faireAddition(5);
+			var ajout10 = faireAddition(10);
+	
+			console.log(ajout3(2));  // 7
+			console.log(ajout10(2)); // 12
+		</script>
+</body>
+</html>
