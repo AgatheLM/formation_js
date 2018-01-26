@@ -68,7 +68,7 @@ function deleteByIdAndRefresh(customerId){
 					alert('Customer deleted successfully');
 				},
 				error: function(jqXHR, textStatus, errorThrown){
-					alert('deleteByIdAndRefresh error');
+					alert('deleteByIdAndRefresh error:'+ errorThrown);
 				}
 			});
 			
@@ -122,7 +122,7 @@ function findByIdAndLoadForm(customerId) {
 	console.log('findByIdAndLoadForm: ' + customerId);
 	$.ajax({
 		type: 'GET',
-		url: 'http://localhost:8082/eproduit-web/rest/clients/' + customerId,
+		url: URL_ROOT + customerId,
 		dataType: "json",
 		success: function(data){
 			console.log('findByIdAndLoadForm success: ' + data.nom);
@@ -266,7 +266,7 @@ function renderDetails(entity) {
 function formToJSON() {
 	var idClient = $('#idClient').val();
 	return JSON.stringify({
-		"idClient": idClient == "" ? null : idClient, 
+				"idClient": idClient == "" ? null : idClient, 
 				"nom": $('#nom').val(), 
 				"prenom": $('#prenom').val(),
 				"numClient": $('#numClient').val(),

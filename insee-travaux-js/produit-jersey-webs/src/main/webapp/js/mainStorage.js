@@ -132,30 +132,29 @@ function refreshTabList() {
 					console.log("current Storage Object :"+currentStringCustomer);
 					var currentSessionCustomer = new Client();
 					currentSessionCustomer = currentSessionCustomer.toClientObject(currentStringCustomer);
-					//alert('currentSessionCustomer:'+currentSessionCustomer.nom);
 					var tdNom = document.createElement('TD');
 					var tdPrenom = document.createElement('TD');
 					var tdSexe = document.createElement('TD');
 					var tdNumeroClient = document.createElement('TD');
 					var tdAdresse = document.createElement('TD');
 					var tdCodePostal = document.createElement('TD');
-					//Ajout du nom
+					//Ajout de la cellule nom
 					tdNom.appendChild(document.createTextNode(currentSessionCustomer.nom));
 					tr.appendChild(tdNom);
-					//Ajout du prenom
+					//Ajout de la cellule prenom
 					tdPrenom.appendChild(document.createTextNode(currentSessionCustomer.prenom));
 					tr.appendChild(tdPrenom);
-					//Ajout du Sexe
+					//Ajout de la cellule Sexe
 					labelSexe = getSexLabelByCode(currentSessionCustomer.sexe);
 					tdSexe.appendChild(document.createTextNode(labelSexe));
 					tr.appendChild(tdSexe);
-					//Ajout du Numéro Client
+					//Ajout de la cellule Numéro Client
 					tdNumeroClient.appendChild(document.createTextNode(currentSessionCustomer.numClient));
 					tr.appendChild(tdNumeroClient);
-					//Ajout de l'adresse
+					//Ajout de la cellulea dresse
 					tdAdresse.appendChild(document.createTextNode(currentSessionCustomer.adresse));
 					tr.appendChild(tdAdresse);
-					//Ajout de l'adresse
+					//Ajout de la cellule codePostal
 					tdCodePostal.appendChild(document.createTextNode(currentSessionCustomer.codePostal));
 					tr.appendChild(tdCodePostal);
 
