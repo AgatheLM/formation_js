@@ -37,6 +37,16 @@ $('#btnSave').click(function() {
 });
 
 
+//Ecouter de clic sur le bouton "search"
+$('#btnSearch').click(function() {
+	if ($('#searchKey').val() !== '') {
+		var nom=$('#searchKey').val();
+		var id = searchCustomer(nom);
+	}
+	findByIdAndLoadForm(id);
+	return false;
+});
+
 //Selection d'une ligne du tableau
 $('#customerTableDivId table tr').live('click', function() {
 	try {
@@ -56,6 +66,24 @@ $('#customerTableDivId table tr').live('dblclick', function() {
 	resetForm();
 });
 
+
+
+function searchCustomer(nom){
+	//On parcours la sessio net on regarde si le nom est le même
+	var id;
+	for (var cle in sessionStorage) {
+		 pString=sessionStorage.getItem(cle);
+		 if(pString!=null){		
+			 var p = new Client();
+			 p=p.toClientObject(pString);
+			 if (p.nom==nom){
+				 id=p.idClient;
+				 break;
+			 }
+		 }
+	}
+	return id;
+}
 /**
  * Supprime et rafraichit un client par son identifiant
  * @param customerId : Identifiant de l'objet qu'on desire supprimer
